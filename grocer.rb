@@ -33,7 +33,7 @@ def apply_coupons(cart, coupons)
     end
       
       
-      if cart.has_key?(name) && info[:count] >= amount 
+      if cart.has_key?(name) && cart[name][:count] >= amount 
         cart[name][:count] =  new_count
         if cart.has_key?("#{name} W/COUPON")
         cart["#{name} W/COUPON"][:count] += dis_count
