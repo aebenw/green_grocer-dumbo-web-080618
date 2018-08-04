@@ -17,18 +17,20 @@ end
 
 def apply_coupons(cart, coupons)
   new_count = 0 
-    discount = 0 
-    new_count = 0 
-    cart.each do |obj, info|
-      
-      old_count = info[:count] 
-      dis_count =  old_count / amount
-      new_count = old_count % amount 
-    end
+  discount = 0 
+  new_count = 0 
+ 
   coupons.each do |discount|
     name = discount[:item]
     worth = discount[:cost]
     amount = discount[:num]
+  
+    cart.each do |obj, info|
+      old_count = info[:count] 
+      dis_count =  old_count / amount
+      new_count = old_count % amount 
+    end
+  
   
   
     
