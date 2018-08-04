@@ -53,6 +53,7 @@ def apply_clearance(cart)
     if info[:clearance] == true 
       info[:price] *= 0.2
     end
+  end
     p cart 
 end
 
