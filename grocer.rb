@@ -30,17 +30,16 @@ def apply_coupons(cart, coupons)
       old_count = info[:count] 
       dis_count =  old_count / amount
       new_count = old_count % amount 
-      clear = info[:clearance]
+    end
       
       
       if cart.has_key?(name) && info[:count] >= amount 
-        cart[name][:count] -=  new_count
+        cart[name][:count] =  new_count
         if cart.has_key?("#{name} W/COUPON")
-        cart["#{name} W/COUPON"][:count] += 1
+        cart["#{name} W/COUPON"][:count] += dis_count
         else cart["#{name} W/COUPON"] = {:price => worth, :clearance => clear, :count => 1}
         end
       end
-    end
   end
 p cart
 end
