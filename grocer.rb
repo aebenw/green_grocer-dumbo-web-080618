@@ -51,7 +51,7 @@ end
 def apply_clearance(cart)
   cart.each do |obj, info|
     if info[:clearance] == true 
-      (info[:price] *= 0.8).round(2)
+      v = info[:price] *= 0.8).round(2)
     end
   end
     p cart 
