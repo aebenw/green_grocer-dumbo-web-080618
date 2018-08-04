@@ -16,13 +16,7 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  coupons.each do |discount|
-    name = discount[:item]
-    worth = discount[:cost]
-    amount = discount[:num]
-  
-  
-    new_count = 0 
+  new_count = 0 
     discount = 0 
     new_count = 0 
     cart.each do |obj, info|
@@ -31,6 +25,13 @@ def apply_coupons(cart, coupons)
       dis_count =  old_count / amount
       new_count = old_count % amount 
     end
+  coupons.each do |discount|
+    name = discount[:item]
+    worth = discount[:cost]
+    amount = discount[:num]
+  
+  
+    
       
       
       if cart.has_key?(name) && cart[name][:count] >= amount 
