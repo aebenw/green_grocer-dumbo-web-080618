@@ -50,9 +50,10 @@ end
 
 def apply_clearance(cart)
   cart.each do |obj, info|
-    info.each do |k, v|
     if info[:clearance] == true 
-      info[:price] = info[:price] 
+      info[:price] *= .2
+    end
+    p cart 
 end
 
 def checkout(cart, coupons)
